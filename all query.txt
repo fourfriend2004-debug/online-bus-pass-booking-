@@ -1,0 +1,69 @@
+INSERT INTO payments
+(`user_id`,`pass_id`,`method`,`upi_id`,`status`,`created_at`,`updated_at`)
+VALUES
+(1,1,'upi','rahul@upi','success',NOW(),NOW()),
+(2,2,'card',NULL,'success',NOW(),NOW()),
+(3,3,'upi','sneha@upi','pending',NOW(),NOW()),
+(4,4,'cash',NULL,'success',NOW(),NOW()),
+(5,5,'upi','vikas@upi','success',NOW(),NOW()),
+(6,6,'card',NULL,'success',NOW(),NOW()),
+(7,7,'upi','rohit@upi','failed',NOW(),NOW()),
+(8,8,'upi','anjali@upi','success',NOW(),NOW()),
+(9,9,'card',NULL,'success',NOW(),NOW()),
+(10,10,'upi','kiran@upi','pending',NOW(),NOW());
+ INSERT INTO passes
+(`pass_type`,`user_id`,`student_name`,`gender`,`mobile`,`email`,
+ `from_location`,`to_location`,`bus_type`,`pass_duration`,
+ `academic_year`,`payment_method`,`price`,`status`,`expiry_date`,
+ `created_at`,`updated_at`)
+VALUES
+('student',1,'Rahul Sharma','Male','9876543210','rahul@gmail.com','City A','City B','local','3 months','2024-25','upi',450,'approved','2026-03-31',NOW(),NOW()),
+('student',2,'Amit Patel','Male','9876543211','amit@gmail.com','City A','City C','express','6 months','2024-25','card',900,'approved','2026-06-30',NOW(),NOW()),
+('student',3,'Sneha Verma','Female','9876543212','sneha@gmail.com','City B','City D','local','3 months','2024-25','upi',480,'pending','2026-03-31',NOW(),NOW()),
+('passenger',4,'Pooja Singh','Female','9876543213','pooja@gmail.com','City C','City D','express','1 month','2024-25','cash',350,'approved','2026-02-28',NOW(),NOW()),
+('passenger',5,'Vikas Mehta','Male','9876543214','vikas@gmail.com','City D','City E','local','3 months','2024-25','upi',600,'approved','2026-04-30',NOW(),NOW()),
+('student',6,'Neha Joshi','Female','9876543215','neha@gmail.com','City E','City F','express','6 months','2024-25','card',1200,'approved','2026-08-31',NOW(),NOW()),
+('student',7,'Rohit Kumar','Male','9876543216','rohit@gmail.com','City F','City G','local','3 months','2024-25','upi',510,'rejected','2026-03-31',NOW(),NOW()),
+('passenger',8,'Anjali Shah','Female','9876543217','anjali@gmail.com','City G','City H','express','1 month','2024-25','upi',400,'approved','2026-02-28',NOW(),NOW()),
+('student',9,'Suresh Yadav','Male','9876543218','suresh@gmail.com','City H','City I','local','6 months','2024-25','card',900,'approved','2026-07-31',NOW(),NOW()),
+('passenger',10,'Kiran Rao','Female','9876543219','kiran@gmail.com','City I','City J','express','3 months','2024-25','upi',750,'pending','2026-05-31',NOW(),NOW());
+ INSERT INTO regs
+(`name`,`email`,`no`,`pass`,`phone`,`dob`,`gender`,`city`,`address`,`pincode`,`photo`,`created_at`,`updated_at`)
+VALUES
+('Rahul Sharma','rahul@gmail.com','R001','123','9876543210','2002-05-10','Male','Ahmedabad','Maninagar','380001','rahul.jpg',NOW(),NOW()),
+('Amit Patel','amit@gmail.com','R002','123','9876543211','2001-08-15','Male','Surat','Varachha','395006','amit.jpg',NOW(),NOW()),
+('Sneha Verma','sneha@gmail.com','R003','123','9876543212','2003-03-12','Female','Vadodara','Alkapuri','390007','sneha.jpg',NOW(),NOW()),
+('Pooja Singh','pooja@gmail.com','R004','123','9876543213','2000-12-01','Female','Rajkot','Kalavad','360005','pooja.jpg',NOW(),NOW()),
+('Vikas Mehta','vikas@gmail.com','R005','123','9876543214','1999-11-21','Male','Bhavnagar','Station Rd','364001','vikas.jpg',NOW(),NOW()),
+('Neha Joshi','neha@gmail.com','R006','123','9876543215','2002-07-30','Female','Junagadh','MG Road','362001','neha.jpg',NOW(),NOW()),
+('Rohit Kumar','rohit@gmail.com','R007','123','9876543216','2001-09-09','Male','Gandhinagar','Sector 21','382021','rohit.jpg',NOW(),NOW()),
+('Anjali Shah','anjali@gmail.com','R008','123','9876543217','2003-01-25','Female','Mehsana','Bus Stand','384001','anjali.jpg',NOW(),NOW()),
+('Suresh Yadav','suresh@gmail.com','R009','123','9876543218','1998-06-18','Male','Nadiad','College Rd','387001','suresh.jpg',NOW(),NOW()),
+('Kiran Rao','kiran@gmail.com','R010','123','9876543219','2000-04-05','Female','Anand','Amul Dairy','388001','kiran.jpg',NOW(),NOW());
+ INSERT INTO contacts
+(`name`,`email`,`phone`,`subject`,`message`,`created_at`,`updated_at`)
+VALUES
+('Rahul Sharma','rahul@gmail.com','9876543210','Bus Pass','Need student pass',NOW(),NOW()),
+('Amit Patel','amit@gmail.com','9876543211','Route Info','Route timing?',NOW(),NOW()),
+('Sneha Verma','sneha@gmail.com','9876543212','Payment','Payment failed',NOW(),NOW()),
+('Pooja Singh','pooja@gmail.com','9876543213','Renewal','How to renew pass?',NOW(),NOW()),
+('Vikas Mehta','vikas@gmail.com','9876543214','Price','Student discount?',NOW(),NOW()),
+('Neha Joshi','neha@gmail.com','9876543215','Bus Type','Local or express?',NOW(),NOW()),
+('Rohit Kumar','rohit@gmail.com','9876543216','Support','Account issue',NOW(),NOW()),
+('Anjali Shah','anjali@gmail.com','9876543217','Pass','Lost my pass',NOW(),NOW()),
+('Suresh Yadav','suresh@gmail.com','9876543218','Refund','Refund request',NOW(),NOW()),
+('Kiran Rao','kiran@gmail.com','9876543219','General','Thanks!',NOW(),NOW());
+ INSERT INTO busroutes
+(`from`, `to`, `local_student_price`, `local_passenger_price`,
+ `express_student_price`, `express_passenger_price`, `created_at`, `updated_at`)
+VALUES
+('City A','City B',150,250,300,450,NOW(),NOW()),
+('City A','City C',180,280,350,500,NOW(),NOW()),
+('City B','City D',120,220,280,420,NOW(),NOW()),
+('City C','City D',160,260,320,470,NOW(),NOW()),
+('City D','City E',200,300,380,550,NOW(),NOW()),
+('City E','City F',210,320,400,580,NOW(),NOW()),
+('City F','City G',190,290,360,520,NOW(),NOW()),
+('City G','City H',170,270,340,500,NOW(),NOW()),
+('City H','City I',230,340,420,620,NOW(),NOW()),
+('City I','City J',250,360,450,650,NOW(),NOW());
